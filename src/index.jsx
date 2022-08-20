@@ -10,7 +10,7 @@ import {
   AverageSessions,
   Performance,
 } from './models';
-import { Store } from "./store";
+import './assets/main.scss';
 
 const USER_ID = 18;
 
