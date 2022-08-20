@@ -1,3 +1,4 @@
+import { createRoot } from 'react-dom/client';
 import {
   resolvers,
   fetchers,
@@ -38,3 +39,13 @@ console.dir(user);
 console.dir(activity);
 console.dir(averageSessions);
 console.dir(performance);
+
+/**********************************
+ * Render a React application.
+**********************************/
+
+const App = () => <h1>Hello world!</h1>;
+
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App tab="home" />);
