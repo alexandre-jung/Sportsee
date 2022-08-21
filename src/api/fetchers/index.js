@@ -1,2 +1,2 @@
-export * from './fixture';
-export * from './endpoint';
+export * from "./fixture";
+export * from "./endpoint";
