@@ -6,7 +6,9 @@
   "scripts": {
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite"
+    "start": "vite",
+    "start:demo": "vite --mode demo",
+    "start:preview": "vite --mode preview"
   },
   "keywords": [],
   "author": "",

@@ -5,6 +5,10 @@ export class BaseFetcher {
     this._delayer = delayer;
   }
 
+  setDelayer(delayer) {
+    this._delayer = delayer;
+  }
+
   get delayer() {
     return this._delayer;
   }
