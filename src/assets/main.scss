@@ -1,6 +1,11 @@
 *,
 ::before,
 ::after {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: slateblue;
+  font-family: Roboto, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --lightgray: #fbfbfb;
+  --gray: #74798c;
+  --border-radius: 5px;
 }

@@ -9,10 +9,10 @@ export const DAYS = {
 };
 
 export const UNITS = {
-  calorieCount: 'kCal',
-  proteinCount: 'g',
-  carbohydrateCount: 'g',
-  lipidCount: 'g',
+  calorie: "kCal",
+  protein: "g",
+  carbohydrate: "g",
+  lipid: "g",
 };
 
 export const MAX_LAST_SESSIONS = 10;
