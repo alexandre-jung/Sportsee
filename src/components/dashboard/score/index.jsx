@@ -1,7 +1,7 @@
 export function Score({ scorePercentage }) {
   return (
     <>
-      <h2>Score</h2>
+      <small>Score</small>
       <pre>{JSON.stringify(scorePercentage, null, 2)}%</pre>
     </>
   );

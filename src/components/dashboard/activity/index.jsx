@@ -1,7 +1,7 @@
 export function Activity({ activity }) {
   return (
     <>
-      <h2>Activité quotidienne</h2>
+      <small>Activité quotidienne</small>
       <pre>{JSON.stringify(activity, null, 2)}</pre>
     </>
   );

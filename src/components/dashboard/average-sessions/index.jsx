@@ -1,7 +1,7 @@
 export function AverageSessions({ averageSessions }) {
   return (
     <>
-      <h2>Durée moyenne des sessions</h2>
+      <small>Durée moyenne des sessions</small>
       <pre>{JSON.stringify(averageSessions, null, 2)}</pre>
     </>
   );

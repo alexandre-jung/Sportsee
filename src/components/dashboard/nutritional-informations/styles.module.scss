@@ -1,0 +1,6 @@
+.nutritionalInformations {
+  max-width: min-content;
+  > * + * {
+    margin-top: 40px;
+  }
+}

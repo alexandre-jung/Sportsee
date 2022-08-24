@@ -5,6 +5,7 @@ import { ReactComponent as ChickenThighIcon } from "/src/assets/images/chicken-t
 import { ReactComponent as AppleIcon } from "/src/assets/images/apple-icon.svg";
 import { ReactComponent as BurgerIcon } from "/src/assets/images/burger-icon.svg";
 import { formatNumber } from "../../../utils";
+import styles from "./styles.module.scss";
 
 export function NutritionalInformations({
   calorie,
@@ -15,8 +16,7 @@ export function NutritionalInformations({
   const formattedCalorie = formatNumber(calorie);
 
   return (
-    <>
-      <h2>Informations nutritrionnelles</h2>
+    <div className={styles.nutritionalInformations}>
       <NutritionalItem
         value={formattedCalorie}
         unit={UNITS.calorie}
@@ -41,6 +41,6 @@ export function NutritionalInformations({
         label="Lipides"
         Icon={BurgerIcon}
       />
-    </>
+    </div>
   );
 }

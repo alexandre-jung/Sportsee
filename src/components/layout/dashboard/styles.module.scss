@@ -1,0 +1,34 @@
+.dashboardLayout {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "activity activity activity nutritionalInformations"
+    "averageSessions performance score nutritionalInformations";
+  gap: 40px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.activity {
+  grid-area: activity;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.averageSessions {
+  grid-area: averageSessions;
+}
+
+.performance {
+  grid-area: performance;
+}
+
+.score {
+  grid-area: score;
+}
+
+.nutritionalInformations {
+  grid-area: nutritionalInformations;
+}

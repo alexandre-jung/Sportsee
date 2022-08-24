@@ -14,6 +14,7 @@ import {
   Score,
   NutritionalInformations,
 } from "./components/dashboard";
+import { DashboardLayout } from "./components/layout";
 
 const USER_ID = 18;
 
@@ -28,14 +29,18 @@ function App() {
   ) : userQuery.isError ? (
     <p>Ooops... {error.message}</p>
   ) : (
-    <>
-      <Header firstName={userQuery.data.firstName} />
-      <Activity activity={activityQuery.data} />
-      <AverageSessions averageSessions={averageSessionsQuery.data} />
-      <Performance performance={performanceQuery.data} />
-      <Score scorePercentage={userQuery.data.scorePercentage} />
-      <NutritionalInformations {...userQuery.data.nutritionalInformations} />
-    </>
+    <DashboardLayout
+      header={<Header firstName={userQuery.data.firstName} />}
+      activity={<Activity activity={activityQuery.data} />}
+      averageSessions={
+        <AverageSessions averageSessions={averageSessionsQuery.data} />
+      }
+      performance={<Performance performance={performanceQuery.data} />}
+      score={<Score scorePercentage={userQuery.data.scorePercentage} />}
+      nutritionalInformations={
+        <NutritionalInformations {...userQuery.data.nutritionalInformations} />
+      }
+    />
   );
 }
 
