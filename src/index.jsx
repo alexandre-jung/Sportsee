@@ -6,18 +6,36 @@ import {
   useUser,
 } from "./hooks";
 import "./assets/main.scss";
+import {
+  Header,
+  Activity,
+  AverageSessions,
+  Performance,
+  Score,
+  NutritionalInformations,
+} from "./components/dashboard";
 
 const USER_ID = 18;
 
 function App() {
-  const { data, isLoading, isError, error } = useUser(USER_ID);
+  const userQuery = useUser(USER_ID);
+  const activityQuery = useActivity(USER_ID);
+  const averageSessionsQuery = useAverageSessions(USER_ID);
+  const performanceQuery = usePerformance(USER_ID);
 
-  return isLoading ? (
+  return userQuery.isLoading ? (
     <h1>Loading...</h1>
-  ) : isError ? (
+  ) : userQuery.isError ? (
     <p>Ooops... {error.message}</p>
   ) : (
-    <pre>{JSON.stringify(data, null, 2)}</pre>
+    <>
+      <Header firstName={userQuery.data.firstName} />
+      <Activity activity={activityQuery.data} />
+      <AverageSessions averageSessions={averageSessionsQuery.data} />
+      <Performance performance={performanceQuery.data} />
+      <Score scorePercentage={userQuery.data.scorePercentage} />
+      <NutritionalInformations {...userQuery.data.nutritionalInformations} />
+    </>
   );
 }
 

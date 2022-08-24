@@ -21,4 +21,20 @@ export class User {
   get formattedScorePercentage() {
     return `${this.scorePercentage}%`;
   }
+
+  get nutritionalInformations() {
+    const {
+      calorieCount: calorie,
+      proteinCount: protein,
+      carbohydrateCount: carbohydrate,
+      lipidCount: lipid,
+    } = this;
+
+    return {
+      calorie,
+      protein,
+      carbohydrate,
+      lipid,
+    };
+  }
 }

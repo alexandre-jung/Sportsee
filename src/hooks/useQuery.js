@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const initialQueryState = {
-  isLoading: false,
+  isLoading: true,
   data: null,
 };
 
@@ -26,12 +26,14 @@ export function useQuery(queryFunction) {
         }
       })
       .catch((error) => {
-        setQueryState((previous) => ({
-          previous,
-          isLoading: false,
-          isError: true,
-          error,
-        }));
+        if (isMounted.current) {
+          setQueryState((previous) => ({
+            previous,
+            isLoading: false,
+            isError: true,
+            error,
+          }));
+        }
       });
   }, []);
 
