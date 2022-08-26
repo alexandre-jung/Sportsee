@@ -27,20 +27,22 @@ export function AverageSessions({ averageSessions }) {
           left: 10,
           bottom: 5,
         }}
+        style={{ backgroundColor: "red" }}
       >
         <XAxis
           dataKey="abbreviatedDay"
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: "10px" }}
+          tick={{ fontSize: "10px", fill: "white" }}
           dy={10}
         />
         <Tooltip content={CustomTooltip} wrapperStyle={{ outline: "none" }} />
         <Line
           type="monotone"
           dataKey="length"
-          stroke="#8884d8"
+          stroke="white"
           strokeWidth={2}
+          dot={false}
         />
         <text
           x="20"
@@ -48,6 +50,7 @@ export function AverageSessions({ averageSessions }) {
           textAnchor="start"
           dominantBaseline="hanging"
           className={styles.label}
+          fill="white"
         >
           Durée moyenne des
         </text>
@@ -57,6 +60,7 @@ export function AverageSessions({ averageSessions }) {
           textAnchor="start"
           dominantBaseline="hanging"
           className={styles.label}
+          fill="white"
         >
           sessions
         </text>

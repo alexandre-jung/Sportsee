@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 export function NutritionalItem({ value, unit, label, Icon }) {
   return (
     <div className={styles.nutritionalItem}>
-      <Icon />
+      <Icon style={{ width: 50 }} />
       <div>
         <strong>
           {value}

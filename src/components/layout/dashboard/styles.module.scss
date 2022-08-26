@@ -6,7 +6,11 @@
     "averageSessions performance score nutritionalInformations";
   grid-template-rows: 100px 255px 200px;
   grid-template-columns: 1fr 1fr 1fr 241px;
-  gap: 30px;
+  gap: 20px;
+  > * {
+    border-radius: 5px;
+    overflow: hidden;
+  }
 }
 
 .header {

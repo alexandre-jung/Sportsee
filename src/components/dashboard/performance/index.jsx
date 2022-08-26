@@ -27,14 +27,25 @@ export function Performance({ performance }) {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <RadarChart cx="50%" cy="50%" outerRadius="50%" data={data}>
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" tick={{ fontSize: "10px" }} />
+      <RadarChart
+        cx="50%"
+        cy="50%"
+        outerRadius="50%"
+        data={data}
+        style={{ backgroundColor: "black" }}
+      >
+        <PolarGrid stroke="white" />
+        <PolarAngleAxis
+          stroke="white"
+          dataKey="subject"
+          tick={{ fontSize: "10px" }}
+          tickLine={false}
+        />
         <Radar
           name="Performance"
           dataKey="value"
-          stroke="#8884d8"
-          fill="#8884d8"
+          stroke="#e60000"
+          fill="#e60000"
           fillOpacity={0.6}
         />
       </RadarChart>

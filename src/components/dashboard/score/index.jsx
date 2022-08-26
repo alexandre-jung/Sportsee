@@ -10,7 +10,7 @@ export function Score({ scorePercentage }) {
   const data = [
     {
       scorePercentage,
-      fill: "#8884d8",
+      fill: "#e60000",
     },
   ];
 
