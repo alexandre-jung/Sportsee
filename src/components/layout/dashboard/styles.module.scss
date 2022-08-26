@@ -4,7 +4,7 @@
     "header header header header"
     "activity activity activity nutritionalInformations"
     "averageSessions performance score nutritionalInformations";
-  grid-template-rows: 115px 255px 200px;
+  grid-template-rows: 100px 255px 200px;
   grid-template-columns: 1fr 1fr 1fr 241px;
   gap: 30px;
 }
@@ -15,7 +15,6 @@
 
 .activity {
   grid-area: activity;
-  overflow: auto;
   background-color: var(--lightgray);
 }
 
