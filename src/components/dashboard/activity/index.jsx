@@ -1,8 +1,10 @@
 export function Activity({ activity }) {
   return (
-    <>
+    <div>
       <small>Activité quotidienne</small>
-      <pre>{JSON.stringify(activity, null, 2)}</pre>
-    </>
+      <small>
+        <pre>{JSON.stringify(activity, null, 2)}</pre>
+      </small>
+    </div>
   );
 }

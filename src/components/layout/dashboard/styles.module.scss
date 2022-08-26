@@ -4,7 +4,9 @@
     "header header header header"
     "activity activity activity nutritionalInformations"
     "averageSessions performance score nutritionalInformations";
-  gap: 40px;
+  grid-template-rows: 115px 255px 200px;
+  grid-template-columns: 1fr 1fr 1fr 241px;
+  gap: 30px;
 }
 
 .header {
@@ -13,20 +15,23 @@
 
 .activity {
   grid-area: activity;
-  max-height: 300px;
   overflow: auto;
+  background-color: var(--lightgray);
 }
 
 .averageSessions {
   grid-area: averageSessions;
+  background-color: var(--lightgray);
 }
 
 .performance {
   grid-area: performance;
+  background-color: var(--lightgray);
 }
 
 .score {
   grid-area: score;
+  background-color: var(--lightgray);
 }
 
 .nutritionalInformations {

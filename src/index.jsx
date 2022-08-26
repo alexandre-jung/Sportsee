@@ -1,10 +1,4 @@
 import { createRoot } from "react-dom/client";
-import {
-  useActivity,
-  useAverageSessions,
-  usePerformance,
-  useUser,
-} from "./hooks";
 import "./assets/main.scss";
 import {
   Header,
@@ -13,34 +7,28 @@ import {
   Performance,
   Score,
   NutritionalInformations,
+  Dashboard,
 } from "./components/dashboard";
 import { DashboardLayout } from "./components/layout";
+import { QueryPlaceholder } from "./components/placeholder";
 
 const USER_ID = 18;
 
 function App() {
-  const userQuery = useUser(USER_ID);
-  const activityQuery = useActivity(USER_ID);
-  const averageSessionsQuery = useAverageSessions(USER_ID);
-  const performanceQuery = usePerformance(USER_ID);
-
-  return userQuery.isLoading ? (
-    <h1>Loading...</h1>
-  ) : userQuery.isError ? (
-    <p>Ooops... {error.message}</p>
-  ) : (
-    <DashboardLayout
-      header={<Header firstName={userQuery.data.firstName} />}
-      activity={<Activity activity={activityQuery.data} />}
-      averageSessions={
-        <AverageSessions averageSessions={averageSessionsQuery.data} />
-      }
-      performance={<Performance performance={performanceQuery.data} />}
-      score={<Score scorePercentage={userQuery.data.scorePercentage} />}
-      nutritionalInformations={
-        <NutritionalInformations {...userQuery.data.nutritionalInformations} />
-      }
-    />
+  return (
+    <div style={{ padding: "60px" }}>
+      <Dashboard
+        userId={USER_ID}
+        Layout={DashboardLayout}
+        Placeholder={QueryPlaceholder}
+        Header={Header}
+        Activity={Activity}
+        AverageSessions={AverageSessions}
+        Performance={Performance}
+        Score={Score}
+        NutritionalInformations={NutritionalInformations}
+      />
+    </div>
   );
 }
 
