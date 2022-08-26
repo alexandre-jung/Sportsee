@@ -15,4 +15,14 @@ export const UNITS = {
   lipid: "g",
 };
 
+export const DAYS_MAP = {
+  monday: "lundi",
+  tuesday: "mardi",
+  wednesday: "mercredi",
+  thursday: "jeudi",
+  friday: "vendredi",
+  saturday: "samedi",
+  sunday: "dimanche",
+};
+
 export const MAX_LAST_SESSIONS = 10;

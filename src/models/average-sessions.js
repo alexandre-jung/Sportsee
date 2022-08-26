@@ -10,7 +10,7 @@ export class AverageSessions {
     const averageSessions = new AverageSessions();
     const sessionsLengthes = getSessionsLengthesByDayIndex(sessions);
     averageSessions.monday = sessionsLengthes[DAYS.MONDAY];
-    averageSessions.thuesday = sessionsLengthes[DAYS.TUESDAY];
+    averageSessions.tuesday = sessionsLengthes[DAYS.TUESDAY];
     averageSessions.wednesday = sessionsLengthes[DAYS.WEDNESDAY];
     averageSessions.thursday = sessionsLengthes[DAYS.THURSDAY];
     averageSessions.friday = sessionsLengthes[DAYS.FRIDAY];
