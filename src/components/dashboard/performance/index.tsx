@@ -7,14 +7,14 @@ import {
 } from 'recharts';
 import { Performance as PerformanceModel } from '../../../models';
 
-export const PERFORMANCE_SUBJECT_MAP = {
+export const PERFORMANCE_SUBJECT_MAP: { [key: string]: string } = {
   intensity: 'Intensité',
   speed: 'Vitesse',
   strength: 'Force',
   endurance: 'Endurance',
   energy: 'Energie',
   cardio: 'Cardio',
-} as any;
+};
 
 function adaptPerformanceData(performance: PerformanceModel) {
   return Object.entries(performance).map(([key, value]) => ({

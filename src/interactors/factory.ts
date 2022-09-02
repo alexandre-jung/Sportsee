@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { ApiInteractor, MockInteractor } from '.';
 import { RandomDelayer, StaticDelayer } from '../api/delayers';
 
@@ -20,7 +21,10 @@ export class InteractorFactory {
       case 'production':
         return new ApiInteractor();
       case 'infinite':
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         return new MockInteractor({ delay: () => {} });
+      default:
+        return new MockInteractor();
     }
   }
 }

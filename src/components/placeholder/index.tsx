@@ -5,6 +5,7 @@ type QueryPlaceholderProps = {
   children: ReactNode;
   isLoading: boolean;
   isError: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   error: any;
 };
 

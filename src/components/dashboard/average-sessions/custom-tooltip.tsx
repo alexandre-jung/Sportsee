@@ -1,6 +1,12 @@
-import styles from "./styles.module.scss";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import styles from './styles.module.scss';
 
-export function CustomTooltip({ active, payload }) {
+type CustomTooltipProps = {
+  active?: boolean;
+  payload?: any;
+};
+
+export function CustomTooltip({ active, payload }: CustomTooltipProps) {
   return (
     active && (
       <div className={styles.tooltip}>

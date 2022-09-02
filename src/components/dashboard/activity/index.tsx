@@ -69,6 +69,7 @@ export function Activity({ activity }: ActivityProps) {
           yAxisId="right"
         />
         <Tooltip
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           content={CustomTooltip as any}
           wrapperStyle={{ outline: 'none' }}
           cursor={{ fill: 'gray', opacity: 0.1 }}
@@ -93,7 +94,7 @@ export function Activity({ activity }: ActivityProps) {
           }}
           iconSize={12}
           iconType="circle"
-          formatter={(value, entry, index) => {
+          formatter={(value) => {
             if (value === 'calories') {
               return `Calories brûlées (kCal)`;
             }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { DAYS_MAP } from '../../../constants';
 import { CustomTooltip } from './custom-tooltip';

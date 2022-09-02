@@ -1,3 +1,5 @@
+import { AverageSessions } from '../components';
+
 export const DAYS = {
   MONDAY: 0,
   TUESDAY: 1,
@@ -15,7 +17,7 @@ export const UNITS = {
   lipid: 'g',
 };
 
-export const DAYS_MAP = {
+export const DAYS_MAP: { [Property in keyof AverageSessions]: string } = {
   monday: 'lundi',
   tuesday: 'mardi',
   wednesday: 'mercredi',

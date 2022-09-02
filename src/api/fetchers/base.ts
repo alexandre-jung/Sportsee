@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Delayer, StaticDelayer } from '../delayers';
 
 export abstract class BaseFetcher {

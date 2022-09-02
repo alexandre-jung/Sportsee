@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { UNITS, FORMAT_DATE_OPTIONS } from '../../../constants';
 import styles from './styles.module.scss';
 

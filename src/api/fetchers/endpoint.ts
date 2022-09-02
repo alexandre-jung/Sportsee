@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { BaseFetcher } from './base';
 
 export class EndpointFetcher extends BaseFetcher {

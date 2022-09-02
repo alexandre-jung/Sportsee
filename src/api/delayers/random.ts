@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Delayer } from './delayer.interface';
 
 export class RandomDelayer implements Delayer {
