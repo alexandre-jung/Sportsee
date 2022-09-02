@@ -7,15 +7,16 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from "recharts";
-import { CustomTooltip } from "./custom-tooltip";
-import styles from "./styles.module.scss";
+} from 'recharts';
+import { CustomTooltip } from './custom-tooltip';
+import styles from './styles.module.scss';
 
 function adaptActivityData(activity) {
-  return activity.map(({ kilogram, calories }, index) => ({
+  return activity.map(({ kilogram, calories, day }, index) => ({
     key: index + 1,
     kilogram,
     calories,
+    day,
   }));
 }
 
@@ -40,27 +41,27 @@ export function Activity({ activity }) {
           dataKey="key"
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: "10px" }}
+          tick={{ fontSize: '10px' }}
           dy={10}
         />
         <YAxis
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: "10px", fill: "black" }}
+          tick={{ fontSize: '10px', fill: 'black' }}
           yAxisId="left"
-          domain={["dataMin - 2", "dataMax + 2"]}
+          domain={['dataMin - 2', 'dataMax + 2']}
         />
         <YAxis
           orientation="right"
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: "10px", fill: "#e60000" }}
+          tick={{ fontSize: '10px', fill: '#e60000' }}
           yAxisId="right"
         />
         <Tooltip
           content={CustomTooltip}
-          wrapperStyle={{ outline: "none" }}
-          cursor={{ fill: "gray", opacity: 0.1 }}
+          wrapperStyle={{ outline: 'none' }}
+          cursor={{ fill: 'gray', opacity: 0.1 }}
         />
         <text
           x={20}
@@ -78,12 +79,12 @@ export function Activity({ activity }) {
           wrapperStyle={{
             top: 15,
             right: 20,
-            fontSize: 12,
+            fontSize: 11,
           }}
           iconSize={12}
           iconType="circle"
           formatter={(value, entry, index) => {
-            if (value === "calories") {
+            if (value === 'calories') {
               return `Calories brûlées (kCal)`;
             }
             return `Poids (kg)`;

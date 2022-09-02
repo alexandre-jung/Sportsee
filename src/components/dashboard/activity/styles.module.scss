@@ -11,9 +11,11 @@
   font-size: 14px;
   opacity: 0.7;
   &Day {
-    text-align: center;
     color: var(--gray);
     padding-bottom: 5px;
     text-transform: capitalize;
+  }
+  &Calories {
+    color: #e60000;
   }
 }

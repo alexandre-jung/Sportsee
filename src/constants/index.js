@@ -9,20 +9,27 @@ export const DAYS = {
 };
 
 export const UNITS = {
-  calorie: "kCal",
-  protein: "g",
-  carbohydrate: "g",
-  lipid: "g",
+  calorie: 'kCal',
+  protein: 'g',
+  carbohydrate: 'g',
+  lipid: 'g',
 };
 
 export const DAYS_MAP = {
-  monday: "lundi",
-  tuesday: "mardi",
-  wednesday: "mercredi",
-  thursday: "jeudi",
-  friday: "vendredi",
-  saturday: "samedi",
-  sunday: "dimanche",
+  monday: 'lundi',
+  tuesday: 'mardi',
+  wednesday: 'mercredi',
+  thursday: 'jeudi',
+  friday: 'vendredi',
+  saturday: 'samedi',
+  sunday: 'dimanche',
 };
 
 export const MAX_LAST_SESSIONS = 10;
+
+export const FORMAT_DATE_OPTIONS = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+};
