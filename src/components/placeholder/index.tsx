@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import styles from './styles.module.scss';
 
 type QueryPlaceholderProps = {
   children: ReactNode;
@@ -14,7 +15,7 @@ export function QueryPlaceholder({
   error,
 }: QueryPlaceholderProps) {
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return <div className={styles.placeholder}></div>;
   }
 
   if (isError) {

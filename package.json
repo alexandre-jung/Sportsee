@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "start": "vite",
     "start:demo": "vite --mode demo",
-    "start:preview": "vite --mode preview"
+    "start:preview": "vite --mode preview",
+    "start:infinite": "vite --mode infinite"
   },
   "keywords": [],
   "author": "",
