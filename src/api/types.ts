@@ -1,0 +1,58 @@
+export type ApiResponseActivity = {
+  data: {
+    userId: number;
+    sessions: [
+      {
+        day: string;
+        kilogram: number;
+        calories: number;
+      }
+    ];
+  };
+};
+
+export type Session = {
+  day: string;
+  sessionLength: number;
+};
+
+export type ApiResponseAverageSessions = {
+  data: {
+    userId: number;
+    sessions: Session[];
+  };
+};
+type Kind = {
+  [key: string]: string;
+};
+
+export type PerformanceItem = {
+  value: number;
+  kind: number;
+};
+
+export type ApiResponsePerformance = {
+  data: {
+    userId: number;
+    kind: Kind;
+    data: PerformanceItem[];
+  };
+};
+
+export type ApiResponseUser = {
+  data: {
+    id: number;
+    userInfos: {
+      firstName: string;
+      lastName: string;
+      age: number;
+    };
+    todayScore: number;
+    keyData: {
+      calorieCount: number;
+      proteinCount: number;
+      carbohydrateCount: number;
+      lipidCount: number;
+    };
+  };
+};
