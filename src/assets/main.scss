@@ -2,12 +2,16 @@
 ::before,
 ::after {
   font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 html,
-body {
+body,
+#app {
   margin: 0;
   padding: 0;
+  height: 100%;
+  min-width: 1024px;
 }
 
 :root {
