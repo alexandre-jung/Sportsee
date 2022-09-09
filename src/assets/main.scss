@@ -1,11 +1,18 @@
 *,
 ::before,
 ::after {
-  font-family: Roboto, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 :root {
   --lightgray: #fbfbfb;
   --gray: #74798c;
   --border-radius: 5px;
+  --dark: #020203;
 }

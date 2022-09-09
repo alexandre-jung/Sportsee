@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import './assets/main.scss';
+import { AppHeader } from './components/layout';
 import {
   Header,
   Activity,
@@ -16,19 +17,22 @@ const USER_ID = 18;
 
 function App() {
   return (
-    <div style={{ padding: '60px' }}>
-      <Dashboard
-        userId={USER_ID}
-        Layout={DashboardLayout}
-        Placeholder={QueryPlaceholder}
-        Header={Header}
-        Activity={Activity}
-        AverageSessions={AverageSessions}
-        Performance={Performance}
-        Score={Score}
-        NutritionalInformations={NutritionalInformations}
-      />
-    </div>
+    <>
+      <AppHeader />
+      <div style={{ padding: '30px' }}>
+        <Dashboard
+          userId={USER_ID}
+          Layout={DashboardLayout}
+          Placeholder={QueryPlaceholder}
+          Header={Header}
+          Activity={Activity}
+          AverageSessions={AverageSessions}
+          Performance={Performance}
+          Score={Score}
+          NutritionalInformations={NutritionalInformations}
+        />
+      </div>
+    </>
   );
 }
 
