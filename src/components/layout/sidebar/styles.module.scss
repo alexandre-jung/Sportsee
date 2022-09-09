@@ -6,7 +6,21 @@
   flex: 0 0 7rem;
   background-color: var(--dark);
 
+  > *:first-child {
+    margin-top: auto;
+  }
   > * + * {
     margin-top: 20px;
   }
+}
+
+.copyright {
+  color: white;
+  font-size: 12px;
+  height: 100px;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  line-height: 100px;
+  margin-top: auto;
+  margin-bottom: 70px;
 }

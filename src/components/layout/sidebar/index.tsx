@@ -11,6 +11,7 @@ export function Sidebar() {
       <SwimmingIcon />
       <BicycleIcon />
       <WeightsIcon />
+      <p className={styles.copyright}>Copyright, SportSee 2022</p>
     </div>
   );
 }
