@@ -1,5 +1,5 @@
-import { createRoot } from "react-dom/client";
-import "./assets/main.scss";
+import { createRoot } from 'react-dom/client';
+import './assets/main.scss';
 import {
   Header,
   Activity,
@@ -8,15 +8,15 @@ import {
   Score,
   NutritionalInformations,
   Dashboard,
-} from "./components/dashboard";
-import { DashboardLayout } from "./components/layout";
-import { QueryPlaceholder } from "./components/placeholder";
+} from './components/dashboard';
+import { DashboardLayout } from './components/layout';
+import { QueryPlaceholder } from './components/placeholder';
 
 const USER_ID = 18;
 
 function App() {
   return (
-    <div style={{ padding: "60px" }}>
+    <div style={{ padding: '60px' }}>
       <Dashboard
         userId={USER_ID}
         Layout={DashboardLayout}
@@ -32,6 +32,6 @@ function App() {
   );
 }
 
-const container = document.getElementById("app");
-const root = createRoot(container);
-root.render(<App tab="home" />);
+const container = document.getElementById('app');
+const root = createRoot(container!);
+root.render(<App />);

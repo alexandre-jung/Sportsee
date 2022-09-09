@@ -7,7 +7,7 @@ import { ReactComponent as BurgerIcon } from '/src/assets/images/burger-icon.svg
 import { formatNumber } from '../../../utils';
 import styles from './styles.module.scss';
 
-type NutritionalInformationsProps = {
+export type NutritionalInformationsProps = {
   calorie: number;
   protein: number;
   carbohydrate: number;

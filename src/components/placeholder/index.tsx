@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import styles from './styles.module.scss';
 
-type QueryPlaceholderProps = {
+export type QueryPlaceholderProps = {
   children: ReactNode;
   isLoading: boolean;
-  isError: boolean;
+  isError?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  error: any;
+  error?: any;
 };
 
 export function QueryPlaceholder({
@@ -14,7 +14,7 @@ export function QueryPlaceholder({
   isLoading,
   isError,
   error,
-}: QueryPlaceholderProps) {
+}: QueryPlaceholderProps): React.ReactElement {
   if (isLoading) {
     return <div className={styles.placeholder}></div>;
   }
@@ -23,5 +23,5 @@ export function QueryPlaceholder({
     return <h2>{error}</h2>;
   }
 
-  return children;
+  return <>{children}</>;
 }

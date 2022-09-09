@@ -1,28 +1,29 @@
 import { FC } from 'react';
 import {
-  QueryState,
   useActivity,
   useAverageSessions,
   usePerformance,
   useUser,
 } from '../../../hooks';
 import { DashboardLayoutProps } from '../../layout';
+import { QueryPlaceholderProps } from '../../placeholder';
 import { ActivityProps } from '../activity';
 import { AverageSessionsProps } from '../average-sessions';
 import { HeaderProps } from '../header';
+import { NutritionalInformationsProps } from '../nutritional-informations';
 import { PerformanceProps } from '../performance';
 import { ScoreProps } from '../score';
 
 type DashboardProps = {
   userId: number;
   Layout: FC<DashboardLayoutProps>;
-  Placeholder: FC<QueryState>;
+  Placeholder: FC<QueryPlaceholderProps>;
   Header: FC<HeaderProps>;
   Activity: FC<ActivityProps>;
   AverageSessions: FC<AverageSessionsProps>;
   Performance: FC<PerformanceProps>;
   Score: FC<ScoreProps>;
-  NutritionalInformations: FC;
+  NutritionalInformations: FC<NutritionalInformationsProps>;
 };
 
 export function Dashboard({
