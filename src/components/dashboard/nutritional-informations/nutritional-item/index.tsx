@@ -22,7 +22,7 @@ export function NutritionalItem({
     <div className={styles.nutritionalItem}>
       <Icon style={{ width: 50 }} />
       <div>
-        <strong>
+        <strong className={styles.value}>
           {value}
           {unit}
         </strong>

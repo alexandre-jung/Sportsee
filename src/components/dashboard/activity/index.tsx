@@ -57,7 +57,7 @@ export function Activity({ activity }: ActivityProps) {
         <YAxis
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: '10px', fill: 'black' }}
+          tick={{ fontSize: '10px', fill: '#282D30' }}
           yAxisId="left"
           domain={['dataMin - 2', 'dataMax + 2']}
         />
@@ -103,15 +103,15 @@ export function Activity({ activity }: ActivityProps) {
         />
         <Bar
           dataKey="kilogram"
-          fill="black"
-          barSize={8}
+          fill="#282D30"
+          barSize={6}
           radius={[10, 10, 0, 0]}
           yAxisId="left"
         />
         <Bar
           dataKey="calories"
           fill="#e60000"
-          barSize={8}
+          barSize={6}
           radius={[10, 10, 0, 0]}
           yAxisId="right"
         />

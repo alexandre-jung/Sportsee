@@ -37,7 +37,7 @@ export function Performance({ performance }: PerformanceProps) {
         cy="50%"
         outerRadius="50%"
         data={data}
-        style={{ backgroundColor: 'black' }}
+        style={{ backgroundColor: '#282D30' }}
       >
         <PolarGrid stroke="white" />
         <PolarAngleAxis
