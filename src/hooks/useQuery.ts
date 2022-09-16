@@ -13,6 +13,13 @@ const initialQueryState = {
   data: null,
 };
 
+/**
+ * Fetches data, using a user provided query function.
+ * Returns an object representing the query state.
+ * Update the component state when the query state changes.
+ *
+ * @param { function } queryFunction - a function returning a Promise
+ */
 export function useQuery<T>(queryFunction: () => Promise<any>) {
   const [queryState, setQueryState] =
     useState<QueryState<T>>(initialQueryState);

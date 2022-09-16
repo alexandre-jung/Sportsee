@@ -3,8 +3,9 @@ import interactor from '../init';
 import { Activity } from '../../models';
 
 /**
- * Fetches the user data.
+ * Fetches the activity data.
  * 
+ * @param { number } userId
  * @return { QueryState } the query state
  */
 export function useActivity(userId: number) {
