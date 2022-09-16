@@ -1,5 +1,5 @@
 /* eslint-disable no-case-declarations */
-import { ApiInteractor, MockInteractor } from '.';
+import { ApiInteractor, BaseInteractor, MockInteractor } from '.';
 import { RandomDelayer, StaticDelayer } from '../api/delayers';
 
 /**
@@ -7,7 +7,12 @@ import { RandomDelayer, StaticDelayer } from '../api/delayers';
  * for the current configuration.
  */
 export class InteractorFactory {
-  get() {
+  /**
+   * Get an API interactor according to the config.
+   * 
+   * @returns BaseInteractor
+   */
+  get(): BaseInteractor {
     switch (import.meta.env.MODE) {
       case 'development':
         return new MockInteractor();

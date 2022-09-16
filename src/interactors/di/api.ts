@@ -9,6 +9,11 @@ import { Delayer } from '../../api/delayers';
  * with an optional response delayer.
  */
 export class ApiInteractor extends BaseInteractor {
+  /**
+   * Constructor.
+   *
+   * @param { Delayer } responseDelayer
+   */
   constructor(responseDelayer?: Delayer) {
     super();
     const resolver = new EndpointResolver(constants.BASE_URL);
