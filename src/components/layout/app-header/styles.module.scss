@@ -17,10 +17,13 @@
 
 .logo {
   color: #e60000;
+  > * {
+    margin-right: 10px;
+  }
 }
 
 .navItem {
-  font-size: 24px;
+  font-size: 22px;
   > * {
     vertical-align: middle;
   }

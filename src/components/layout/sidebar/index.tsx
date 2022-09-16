@@ -7,10 +7,10 @@ import styles from './styles.module.scss';
 export function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <MeditationIcon />
-      <SwimmingIcon />
-      <BicycleIcon />
-      <WeightsIcon />
+      <MeditationIcon width={48} />
+      <SwimmingIcon width={48} />
+      <BicycleIcon width={48} />
+      <WeightsIcon width={48} />
       <p className={styles.copyright}>Copyright, SportSee 2022</p>
     </div>
   );

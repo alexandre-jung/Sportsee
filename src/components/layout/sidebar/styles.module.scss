@@ -3,14 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 0 0 7rem;
   background-color: var(--dark);
+  width: 100px;
 
   > *:first-child {
     margin-top: auto;
   }
   > * + * {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 
