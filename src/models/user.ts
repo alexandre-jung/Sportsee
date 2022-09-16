@@ -1,16 +1,25 @@
-import { ApiResponseUser } from "../api/types";
+import { ApiResponseUser } from '../api/types';
 
+/**
+ * A model that represents the user data.
+ */
 export class User {
-  id: number;
-  firstName: string;
-  lastName: string;
-  age: number;
-  todayScore: number;
-  calorieCount: number;
-  proteinCount: number;
-  carbohydrateCount: number;
-  lipidCount: number;
+  id!: number;
+  firstName!: string;
+  lastName!: string;
+  age!: number;
+  todayScore!: number;
+  calorieCount!: number;
+  proteinCount!: number;
+  carbohydrateCount!: number;
+  lipidCount!: number;
 
+  /**
+   * Builds a User model from the data returned by the API.
+   *
+   * @param { ApiResponseUser } apiRawData the raw api data
+   * @returns { User } User
+   */
   static fromApiData(apiRawData: ApiResponseUser) {
     const { id, userInfos, todayScore, keyData } = apiRawData.data;
     const user = new User();
@@ -26,14 +35,34 @@ export class User {
     return user;
   }
 
+  /**
+   * Returns the today score as a percentage number.
+   *
+   * @return { number } score
+   */
   get scorePercentage() {
     return this.todayScore * 100;
   }
 
+  /**
+   * Return the today score as a formatted percentage string.
+   *
+   * @return { string } formatted score
+   */
   get formattedScorePercentage() {
     return `${this.scorePercentage}%`;
   }
 
+  /**
+   * Returns an object containing nutritional informations for the user.
+   *
+   * @return {{
+   *  calorieCount: number,
+   *  proteinCount: number,
+   *  carbohydrateCount: carbohydrate,
+   *  lipidCount: lipid,
+   * }} nutritional informations
+   */
   get nutritionalInformations() {
     const {
       calorieCount: calorie,
