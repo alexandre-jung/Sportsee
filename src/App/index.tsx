@@ -14,6 +14,11 @@ import styles from './styles.module.scss';
 
 const USER_ID = 18;
 
+/**
+ * The application main component.
+ *
+ * @returns JSX.Element
+ */
 export function App() {
   return (
     <>
