@@ -4,6 +4,10 @@ import { BaseInteractor } from '..';
 import { constants } from '../../api';
 import { Delayer } from '../../api/delayers';
 
+/**
+ * An interactor which interacts will the real API,\
+ * with an optional response delayer.
+ */
 export class ApiInteractor extends BaseInteractor {
   constructor(responseDelayer?: Delayer) {
     super();

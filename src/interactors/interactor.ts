@@ -4,10 +4,13 @@ import { BaseFetcher } from '../api/fetchers/base';
 import { Resolver } from '../api/resolvers';
 import { User, Activity, AverageSessions, Performance } from '../models';
 
-export class BaseInteractor {
-  resolver!: Resolver;
-  fetcher!: BaseFetcher;
-  delayer!: Delayer;
+/**
+ * Base class for API interactors.
+ */
+export abstract class BaseInteractor {
+  private resolver!: Resolver;
+  private fetcher!: BaseFetcher;
+  private delayer!: Delayer;
 
   setResolver(resolver: Resolver) {
     this.resolver = resolver;
@@ -21,7 +24,7 @@ export class BaseInteractor {
     this.delayer = responseDelayer;
   }
 
-  async goForThatQuery(uri: string, Model: any) {
+  async fetch(uri: string, Model: any) {
     if (this.delayer) {
       this.fetcher.setDelayer(this.delayer);
     }
@@ -37,21 +40,21 @@ export class BaseInteractor {
 
   async user(userId: number) {
     const uri = this.resolver.user(userId);
-    return this.goForThatQuery(uri, User);
+    return this.fetch(uri, User);
   }
 
   async activity(userId: number) {
     const uri = this.resolver.activity(userId);
-    return this.goForThatQuery(uri, Activity);
+    return this.fetch(uri, Activity);
   }
 
   async averageSessions(userId: number) {
     const uri = this.resolver.averageSessions(userId);
-    return this.goForThatQuery(uri, AverageSessions);
+    return this.fetch(uri, AverageSessions);
   }
 
   async performance(userId: number) {
     const uri = this.resolver.performance(userId);
-    return this.goForThatQuery(uri, Performance);
+    return this.fetch(uri, Performance);
   }
 }
