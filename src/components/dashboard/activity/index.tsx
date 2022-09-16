@@ -11,7 +11,7 @@ import {
 import { CustomTooltip } from './custom-tooltip';
 import styles from './styles.module.scss';
 
-type Activity = {
+export type Activity = {
   day: Date;
   kilogram: number;
   calories: number;

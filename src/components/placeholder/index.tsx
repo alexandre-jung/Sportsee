@@ -1,19 +1,14 @@
-import { ReactNode } from 'react';
+import { QueryState } from '../../hooks';
 import styles from './styles.module.scss';
 
 export type QueryPlaceholderProps = {
-  children: ReactNode;
-  isLoading: boolean;
-  isError?: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  error?: any;
+  children: (data: unknown) => React.ReactNode;
+  query: QueryState<unknown>;
 };
 
 export function QueryPlaceholder({
+  query: { data, isLoading, isError, error },
   children,
-  isLoading,
-  isError,
-  error,
 }: QueryPlaceholderProps): React.ReactElement {
   if (isLoading) {
     return <div className={styles.placeholder}></div>;
@@ -23,5 +18,5 @@ export function QueryPlaceholder({
     return <h2>{error}</h2>;
   }
 
-  return <>{children}</>;
+  return <>{children(data)}</>;
 }

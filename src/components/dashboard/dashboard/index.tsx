@@ -5,9 +5,10 @@ import {
   usePerformance,
   useUser,
 } from '../../../hooks';
+import * as models from '../../../models';
 import { DashboardLayoutProps } from '../../layout';
 import { QueryPlaceholderProps } from '../../placeholder';
-import { ActivityProps } from '../activity';
+import { Activity, ActivityProps } from '../activity';
 import { AverageSessionsProps } from '../average-sessions';
 import { HeaderProps } from '../header';
 import { NutritionalInformationsProps } from '../nutritional-informations';
@@ -45,35 +46,48 @@ export function Dashboard({
   return (
     <Layout
       header={
-        <Placeholder {...userQuery}>
-          <Header firstName={userQuery.data?.firstName} />
+        <Placeholder query={userQuery}>
+          {(user) => <Header firstName={(user as models.User).firstName} />}
         </Placeholder>
       }
       activity={
-        <Placeholder {...activityQuery}>
-          <Activity activity={activityQuery.data} />
+        <Placeholder query={activityQuery}>
+          {(activity) => <Activity activity={activity as Activity[]} />}
         </Placeholder>
       }
       averageSessions={
-        <Placeholder {...averageSessionsQuery}>
-          <AverageSessions averageSessions={averageSessionsQuery.data} />
+        <Placeholder query={averageSessionsQuery}>
+          {(averageSessions) => (
+            <AverageSessions
+              averageSessions={averageSessions as models.AverageSessions}
+            />
+          )}
         </Placeholder>
       }
       performance={
-        <Placeholder {...performanceQuery}>
-          <Performance performance={performanceQuery.data} />
+        <Placeholder query={performanceQuery}>
+          {(performance) => (
+            <Performance performance={performance as models.Performance} />
+          )}
         </Placeholder>
       }
       score={
-        <Placeholder {...userQuery}>
-          <Score scorePercentage={userQuery.data?.scorePercentage} />
+        <Placeholder query={userQuery}>
+          {(user) => (
+            <Score scorePercentage={(user as models.User).scorePercentage} />
+          )}
         </Placeholder>
       }
       nutritionalInformations={
-        <Placeholder {...userQuery}>
-          <NutritionalInformations
-            {...userQuery.data?.nutritionalInformations}
-          />
+        <Placeholder query={userQuery}>
+          {(user) => (
+            <NutritionalInformations
+              calorie={(user as models.User).calorieCount}
+              protein={(user as models.User).proteinCount}
+              carbohydrate={(user as models.User).carbohydrateCount}
+              lipid={(user as models.User).lipidCount}
+            />
+          )}
         </Placeholder>
       }
     />

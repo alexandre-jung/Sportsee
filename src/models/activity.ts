@@ -23,6 +23,7 @@ export class Activity {
           calories,
         };
       });
+
     return lastSessionsAntiChronological.reverse();
   }
 }

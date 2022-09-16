@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, useRef } from 'react';
 
-export type QueryState = {
+export type QueryState<T> = {
   isLoading: boolean;
-  data?: any;
+  data: T | null;
   isError?: boolean;
   error?: any;
 };
@@ -13,8 +13,10 @@ const initialQueryState = {
   data: null,
 };
 
-export function useQuery(queryFunction: () => Promise<any>) {
-  const [queryState, setQueryState] = useState<QueryState>(initialQueryState);
+export function useQuery<T>(queryFunction: () => Promise<any>) {
+  const [queryState, setQueryState] =
+    useState<QueryState<T>>(initialQueryState);
+
   const isMounted = useRef(false);
 
   useEffect(() => {

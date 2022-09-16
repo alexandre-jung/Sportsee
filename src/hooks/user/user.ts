@@ -1,6 +1,7 @@
 import { useQuery } from '../useQuery';
 import interactor from '../init';
+import { User } from '../../models';
 
 export function useUser(userId: number) {
-  return useQuery(() => interactor.user(userId));
+  return useQuery<User>(() => interactor.user(userId));
 }
