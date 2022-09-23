@@ -1,4 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * Base class for delayers.
+ */
 export abstract class Delayer {
-  abstract delay(resolve: (data: any) => void, data: any): void;
+  abstract delay<T>(resolve: (data: T) => void, data: T): void;
 }

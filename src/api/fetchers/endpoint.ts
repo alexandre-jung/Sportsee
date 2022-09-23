@@ -1,7 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { BaseFetcher } from './base';
 
+/**
+ * A fetcher to make GET requests to an API endpoint.
+ */
 export class EndpointFetcher extends BaseFetcher {
+  /**
+   * Send a GET request and returns the response wrapped in a Promise.
+   *
+   * @param { string } endpoint the endpoint URL.
+   * @returns Promise<any>
+   */
   get(endpoint: string) {
     const fetchPromise = fetch(endpoint);
     const resolver = (

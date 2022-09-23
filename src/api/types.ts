@@ -1,3 +1,6 @@
+/**
+ * Types of API responses for every endpoint.
+ */
 export type ApiResponseActivity = {
   data: {
     userId: number;

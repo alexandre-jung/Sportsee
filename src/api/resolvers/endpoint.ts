@@ -1,8 +1,16 @@
 import { Resolver } from './resolver.interface';
 
+/**
+ * A class that provides endpoint URLs.
+ */
 export class EndpointResolver implements Resolver {
-  baseURL: string;
+  private baseURL: string;
 
+  /**
+   * Constructor.
+   *
+   * @param { string } baseURL the base URL for all API requests
+   */
   constructor(baseURL: string) {
     this.baseURL = baseURL;
   }
