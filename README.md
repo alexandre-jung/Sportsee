@@ -4,7 +4,7 @@ Project 12 - Develop an analytics dashboard using React.
 
 ## Prerequisites
 
-You must have [`Node 16`](https://nodejs.org/en/) installed with `npm`.\
+You must have [`Node 16`](https://nodejs.org/en/) installed with `npm 8`.\
 Higher versions should also work, though this has not been tested.
 
 ## Installation
@@ -15,7 +15,7 @@ cd Sportsee/
 npm install
 ```
 
-## Start
+## Start using mock data
 
 To start the project in development mode, run:
 
