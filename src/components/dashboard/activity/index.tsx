@@ -17,6 +17,10 @@ export type Activity = {
   calories: number;
 };
 
+/**
+ * Transforms the data from an Activity model to a format that can be displayed
+ * by the activity graph component.
+ */
 function adaptActivityData(activity: Activity[]) {
   return activity.map(({ kilogram, calories, day }, index) => ({
     key: index + 1,
@@ -30,6 +34,9 @@ export type ActivityProps = {
   activity: Activity[];
 };
 
+/**
+ * The activity graph component.
+ */
 export function Activity({ activity }: ActivityProps) {
   const data = adaptActivityData(activity);
 

@@ -12,6 +12,10 @@ type NutritionalItemProps = {
   >;
 };
 
+/**
+ * Displays a single nutritional information
+ * with its value, unit, help text and an pretty icon.
+ */
 export function NutritionalItem({
   value,
   unit,

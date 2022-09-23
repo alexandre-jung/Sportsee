@@ -1,3 +1,6 @@
+/**
+ * Global constants.
+ */
 import { AverageSessions } from '../components';
 
 export const DAYS = {

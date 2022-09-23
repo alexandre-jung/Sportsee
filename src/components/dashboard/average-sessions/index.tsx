@@ -14,6 +14,10 @@ export type AverageSessions = {
   sunday: number;
 };
 
+/**
+ * Transforms the data from an AverageSessions model to a format that can be displayed
+ * by the average sessions graph component.
+ */
 function adaptAverageSessionsData(averageSessions: AverageSessions) {
   return Object.entries(averageSessions).map(([day, length]) => ({
     key: day,
@@ -27,6 +31,9 @@ export type AverageSessionsProps = {
   averageSessions: AverageSessions;
 };
 
+/**
+ * The average sessions graph component.
+ */
 export function AverageSessions({ averageSessions }: AverageSessionsProps) {
   const data = adaptAverageSessionsData(averageSessions);
 

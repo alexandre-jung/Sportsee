@@ -6,6 +6,9 @@ type CustomTooltipProps = {
   payload?: any;
 };
 
+/**
+ * Custom Recharts tooltip for the average sessions graph.
+ */
 export function CustomTooltip({ active, payload }: CustomTooltipProps) {
   return (
     active && (

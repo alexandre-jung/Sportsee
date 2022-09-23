@@ -4,6 +4,9 @@ export type HeaderProps = {
   firstName: string;
 };
 
+/**
+ * The dashboard header that displays the user name and a encouraging message.
+ */
 export function Header({ firstName }: HeaderProps) {
   return (
     <>

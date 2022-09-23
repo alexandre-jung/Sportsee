@@ -1,4 +1,3 @@
-// import { ReactElement } from 'react';
 import styles from './styles.module.scss';
 
 export type DashboardLayoutProps = {
@@ -10,6 +9,9 @@ export type DashboardLayoutProps = {
   nutritionalInformations: JSX.Element;
 };
 
+/**
+ * The dashboard to display user's most important informations.
+ */
 export function DashboardLayout({
   header,
   activity,

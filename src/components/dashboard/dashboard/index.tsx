@@ -27,6 +27,10 @@ type DashboardProps = {
   NutritionalInformations: FC<NutritionalInformationsProps>;
 };
 
+/**
+ * The dashboard main component to display
+ * all the graphs and other usefull informations.
+ */
 export function Dashboard({
   userId,
   Layout,

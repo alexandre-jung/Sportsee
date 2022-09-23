@@ -14,6 +14,9 @@ export type NutritionalInformationsProps = {
   lipid: number;
 };
 
+/**
+ * Displays the user's nutritional informations in a vertical box of items.
+ */
 export function NutritionalInformations({
   calorie,
   protein,

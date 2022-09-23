@@ -10,6 +10,9 @@ export type ScoreProps = {
   scorePercentage: number;
 };
 
+/**
+ * The today's score progress ring.
+ */
 export function Score({ scorePercentage }: ScoreProps) {
   const data = [
     {

@@ -6,6 +6,9 @@ export type QueryPlaceholderProps = {
   query: QueryState<unknown>;
 };
 
+/**
+ * A component that delays the display of its children until a query resolves.
+ */
 export function QueryPlaceholder({
   query: { data, isLoading, isError, error },
   children,

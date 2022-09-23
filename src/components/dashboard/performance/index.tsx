@@ -16,6 +16,10 @@ export const PERFORMANCE_SUBJECT_MAP: { [key: string]: string } = {
   cardio: 'Cardio',
 };
 
+/**
+ * Transforms the data from a Performance model to a format that can be displayed
+ * by the performance graph component.
+ */
 function adaptPerformanceData(performance: PerformanceModel) {
   return Object.entries(performance).map(([key, value]) => ({
     subject: PERFORMANCE_SUBJECT_MAP[key],
@@ -27,6 +31,9 @@ export type PerformanceProps = {
   performance: { [key: string]: number };
 };
 
+/**
+ * The performance graph.
+ */
 export function Performance({ performance }: PerformanceProps) {
   const data = adaptPerformanceData(performance);
 

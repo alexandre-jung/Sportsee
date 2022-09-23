@@ -1,6 +1,9 @@
 import styles from './styles.module.scss';
 import { ReactComponent as AppLogo } from '../../../assets/images/sportsee-logo.svg';
 
+/**
+ * The application main header.
+ */
 export function AppHeader() {
   return (
     <header className={styles.header}>

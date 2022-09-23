@@ -4,6 +4,9 @@ import { ReactComponent as BicycleIcon } from '../../../assets/images/bicycle-ic
 import { ReactComponent as WeightsIcon } from '../../../assets/images/weights-icon.svg';
 import styles from './styles.module.scss';
 
+/**
+ * The application main side bar.
+ */
 export function Sidebar() {
   return (
     <div className={styles.sidebar}>

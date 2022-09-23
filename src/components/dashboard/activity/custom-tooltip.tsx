@@ -7,6 +7,9 @@ type CustomTooltipProps = {
   payload?: any;
 };
 
+/**
+ * Custom Recharts tooltip for the activity graph.
+ */
 export function CustomTooltip({ active, payload }: CustomTooltipProps) {
   if (active && payload && payload.length) {
     return (
