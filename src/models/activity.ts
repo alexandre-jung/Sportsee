@@ -9,7 +9,7 @@ export class Activity {
    * Builds an Activity model from the data returned by the API.
    *
    * @param { Activity } apiRawData the raw api data
-   * @returns { Activity } Performance
+   * @returns { Activity } Activity
    */
   static fromApiData(apiRawData: ApiResponseActivity) {
     const { sessions: lastSessionsChronological } = apiRawData.data;

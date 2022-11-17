@@ -28,7 +28,7 @@ export class AverageSessions {
    * Builds an AverageSessions model from the data returned by the API.
    *
    * @param { AverageSessions } apiRawData the raw api data
-   * @returns { AverageSessions } Performance
+   * @returns { AverageSessions } AverageSessions
    */
   static fromApiData(apiRawData: ApiResponseAverageSessions) {
     const { sessions } = apiRawData.data;

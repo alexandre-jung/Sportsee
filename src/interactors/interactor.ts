@@ -2,7 +2,7 @@
 import { Delayer } from '../api/delayers';
 import { BaseFetcher } from '../api/fetchers/base';
 import { Resolver } from '../api/resolvers';
-import { User, Activity, AverageSessions, Performance } from '../models';
+import { Activity, AverageSessions, Performance, User } from '../models';
 
 /**
  * Base class for API interactors.
@@ -56,8 +56,7 @@ export abstract class BaseInteractor {
     } catch (error: any) {
       return Promise.reject({ message: error.message });
     }
-    const user = Model.fromApiData(data);
-    return user;
+    return Model.fromApiData(data);
   }
 
   /**
@@ -72,7 +71,7 @@ export abstract class BaseInteractor {
   }
 
   /**
-   * Fetches aN Activity model.
+   * Fetches an Activity model.
    *
    * @param { number } userId
    * @returns Activity
