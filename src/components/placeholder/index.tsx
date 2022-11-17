@@ -18,7 +18,7 @@ export function QueryPlaceholder({
   }
 
   if (isError) {
-    return <h2>{error}</h2>;
+    return <h2>{error.message}</h2>;
   }
 
   return <>{children(data)}</>;
