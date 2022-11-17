@@ -13,7 +13,8 @@
     "start": "vite",
     "start:demo": "vite --mode demo",
     "start:infinite": "vite --mode infinite",
-    "start:preview": "vite --mode preview"
+    "start:preview": "vite --mode preview",
+    "start:production": "vite --mode production"
   },
   "devDependencies": {
     "@types/react": "^18.0.18",
