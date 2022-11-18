@@ -15,7 +15,7 @@ export type NutritionalInformationsProps = {
 };
 
 /**
- * Displays the user's nutritional informations in a vertical box of items.
+ * Displays the user's nutritional information in a vertical box of items.
  */
 export function NutritionalInformations({
   calorie,

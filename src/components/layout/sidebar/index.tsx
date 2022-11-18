@@ -5,7 +5,7 @@ import { ReactComponent as WeightsIcon } from '../../../assets/images/weights-ic
 import styles from './styles.module.scss';
 
 /**
- * The application main side bar.
+ * The application main sidebar.
  */
 export function Sidebar() {
   return (

@@ -4,6 +4,7 @@ const CHUNK_SIZE = 3;
  * Formats a number to a string with thousands separator.
  *
  * @param number
+ * @param separator
  * @returns string
  */
 export function formatNumber(number: number, separator = ',') {

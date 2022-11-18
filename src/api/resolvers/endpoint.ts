@@ -4,7 +4,7 @@ import { Resolver } from './resolver.interface';
  * A class that provides endpoint URLs.
  */
 export class EndpointResolver implements Resolver {
-  private baseURL: string;
+  private readonly baseURL: string;
 
   /**
    * Constructor.

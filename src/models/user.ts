@@ -14,6 +14,7 @@ export class User {
   carbohydrateCount!: number;
   lipidCount!: number;
 
+  // noinspection JSUnusedGlobalSymbols
   /**
    * Builds a User model from the data returned by the API.
    *
@@ -44,6 +45,7 @@ export class User {
     return this.todayScore * 100;
   }
 
+  // noinspection JSUnusedGlobalSymbols
   /**
    * Return the today score as a formatted percentage string.
    *
@@ -53,15 +55,16 @@ export class User {
     return `${this.scorePercentage}%`;
   }
 
+  // noinspection JSUnusedGlobalSymbols
   /**
-   * Returns an object containing nutritional informations for the user.
+   * Returns an object containing nutritional information for the user.
    *
    * @return {{
    *  calorieCount: number,
    *  proteinCount: number,
    *  carbohydrateCount: carbohydrate,
    *  lipidCount: lipid,
-   * }} nutritional informations
+   * }} nutritional information
    */
   get nutritionalInformations() {
     const {

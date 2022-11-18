@@ -6,6 +6,7 @@ import { ApiResponsePerformance } from '../api/types';
 export class Performance {
   [key: string]: number;
 
+  // noinspection JSUnusedGlobalSymbols
   /**
    * Builds a Performance model from the data returned by the API.
    *

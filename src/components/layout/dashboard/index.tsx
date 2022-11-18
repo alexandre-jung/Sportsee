@@ -10,7 +10,7 @@ export type DashboardLayoutProps = {
 };
 
 /**
- * The dashboard to display user's most important informations.
+ * The dashboard to display user's most important information.
  */
 export function DashboardLayout({
   header,

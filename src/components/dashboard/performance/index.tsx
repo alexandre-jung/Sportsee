@@ -12,7 +12,7 @@ export const PERFORMANCE_SUBJECT_MAP: { [key: string]: string } = {
   speed: 'Vitesse',
   strength: 'Force',
   endurance: 'Endurance',
-  energy: 'Energie',
+  energy: 'Énergie',
   cardio: 'Cardio',
 };
 

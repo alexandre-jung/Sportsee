@@ -5,6 +5,7 @@ import { MAX_LAST_SESSIONS } from '../constants';
  * A model that represents the activity data.
  */
 export class Activity {
+  // noinspection JSUnusedGlobalSymbols
   /**
    * Builds an Activity model from the data returned by the API.
    *

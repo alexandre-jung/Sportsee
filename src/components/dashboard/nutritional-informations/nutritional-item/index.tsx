@@ -14,7 +14,7 @@ type NutritionalItemProps = {
 
 /**
  * Displays a single nutritional information
- * with its value, unit, help text and an pretty icon.
+ * with its value, unit, help text and a pretty icon.
  */
 export function NutritionalItem({
   value,

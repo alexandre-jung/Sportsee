@@ -3,8 +3,8 @@ import interactor from '../init';
 import { AverageSessions } from '../../models';
 
 /**
- * Fetches the average sessions data.
- * 
+ * Fetches the average session data.
+ *
  * @param { number } userId
  * @return { QueryState } the query state
  */

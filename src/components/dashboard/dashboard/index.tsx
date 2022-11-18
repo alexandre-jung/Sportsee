@@ -29,7 +29,7 @@ type DashboardProps = {
 
 /**
  * The dashboard main component to display
- * all the graphs and other usefull informations.
+ * all the graphs and other useful information.
  */
 export function Dashboard({
   userId,

@@ -2,18 +2,18 @@ import { Session, ApiResponseAverageSessions } from '../api/types';
 import { DAYS } from '../constants';
 
 /**
- * Converts the sessions data from the API to an array of session lengthes,
+ * Converts the sessions data from the API to an array of session lengths,
  * indexed by day index (where monday is at index 0).
  *
  * @param { { day: number, sessionLength: number }[] } sessions
- * @returns { number[] } an array of lengthes
+ * @returns { number[] } an array of lengths
  */
-function getSessionsLengthesByDayIndex(sessions: Session[]) {
+function getSessionsLengthsByDayIndex(sessions: Session[]) {
   return Array.from(sessions.values()).map((day) => day.sessionLength);
 }
 
 /**
- * A model that represents the average sessions data.
+ * A model that represents the average session data.
  */
 export class AverageSessions {
   monday!: number;
@@ -24,6 +24,7 @@ export class AverageSessions {
   saturday!: number;
   sunday!: number;
 
+  // noinspection JSUnusedGlobalSymbols
   /**
    * Builds an AverageSessions model from the data returned by the API.
    *
@@ -33,14 +34,14 @@ export class AverageSessions {
   static fromApiData(apiRawData: ApiResponseAverageSessions) {
     const { sessions } = apiRawData.data;
     const averageSessions = new AverageSessions();
-    const sessionsLengthes = getSessionsLengthesByDayIndex(sessions);
-    averageSessions.monday = sessionsLengthes[DAYS.MONDAY];
-    averageSessions.tuesday = sessionsLengthes[DAYS.TUESDAY];
-    averageSessions.wednesday = sessionsLengthes[DAYS.WEDNESDAY];
-    averageSessions.thursday = sessionsLengthes[DAYS.THURSDAY];
-    averageSessions.friday = sessionsLengthes[DAYS.FRIDAY];
-    averageSessions.saturday = sessionsLengthes[DAYS.SATURDAY];
-    averageSessions.sunday = sessionsLengthes[DAYS.SUNDAY];
+    const sessionsLengths = getSessionsLengthsByDayIndex(sessions);
+    averageSessions.monday = sessionsLengths[DAYS.MONDAY];
+    averageSessions.tuesday = sessionsLengths[DAYS.TUESDAY];
+    averageSessions.wednesday = sessionsLengths[DAYS.WEDNESDAY];
+    averageSessions.thursday = sessionsLengths[DAYS.THURSDAY];
+    averageSessions.friday = sessionsLengths[DAYS.FRIDAY];
+    averageSessions.saturday = sessionsLengths[DAYS.SATURDAY];
+    averageSessions.sunday = sessionsLengths[DAYS.SUNDAY];
     return averageSessions;
   }
 }

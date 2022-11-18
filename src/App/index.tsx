@@ -1,4 +1,4 @@
-import { AppHeader, Sidebar } from '../components/layout';
+import { AppHeader, Sidebar } from '../components';
 import {
   Header,
   Activity,
@@ -7,12 +7,12 @@ import {
   Score,
   NutritionalInformations,
   Dashboard,
-} from '../components/dashboard';
-import { DashboardLayout } from '../components/layout';
-import { QueryPlaceholder } from '../components/placeholder';
+} from '../components';
+import { DashboardLayout } from '../components';
+import { QueryPlaceholder } from '../components';
 import styles from './styles.module.scss';
 
-const USER_ID = 18;
+const USER_ID = 12;
 
 /**
  * The application main component.
