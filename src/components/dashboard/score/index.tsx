@@ -1,10 +1,6 @@
-import {
-  RadialBarChart,
-  RadialBar,
-  ResponsiveContainer,
-  PolarAngleAxis,
-} from 'recharts';
+import { PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer } from 'recharts';
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 export type ScoreProps = {
   scorePercentage: number;
@@ -13,7 +9,7 @@ export type ScoreProps = {
 /**
  * The today's score progress ring.
  */
-export function Score({ scorePercentage }: ScoreProps) {
+export function Score ({ scorePercentage }: ScoreProps) {
   const data = [
     {
       scorePercentage,
@@ -80,3 +76,7 @@ export function Score({ scorePercentage }: ScoreProps) {
     </ResponsiveContainer>
   );
 }
+
+Score.propTypes = {
+  scorePercentage: PropTypes.number.isRequired,
+};

@@ -1,15 +1,7 @@
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from 'recharts';
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { CustomTooltip } from './custom-tooltip';
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 export type Activity = {
   day: Date;
@@ -21,7 +13,7 @@ export type Activity = {
  * Transforms the data from an Activity model to a format that can be displayed
  * by the activity graph component.
  */
-function adaptActivityData(activity: Activity[]) {
+function adaptActivityData (activity: Activity[]) {
   return activity.map(({ kilogram, calories, day }, index) => ({
     key: index + 1,
     kilogram,
@@ -37,7 +29,7 @@ export type ActivityProps = {
 /**
  * The activity graph component.
  */
-export function Activity({ activity }: ActivityProps) {
+export function Activity ({ activity }: ActivityProps) {
   const data = adaptActivityData(activity);
 
   return (
@@ -126,3 +118,13 @@ export function Activity({ activity }: ActivityProps) {
     </ResponsiveContainer>
   );
 }
+
+Activity.propTypes = {
+  activity: PropTypes.arrayOf(
+    PropTypes.exact({
+      day: PropTypes.any.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};

@@ -1,10 +1,5 @@
 import { FC } from 'react';
-import {
-  useActivity,
-  useAverageSessions,
-  usePerformance,
-  useUser,
-} from '../../../hooks';
+import { useActivity, useAverageSessions, usePerformance, useUser } from '../../../hooks';
 import * as models from '../../../models';
 import { DashboardLayoutProps } from '../../layout';
 import { QueryPlaceholderProps } from '../../placeholder';
@@ -14,6 +9,7 @@ import { HeaderProps } from '../header';
 import { NutritionalInformationsProps } from '../nutritional-informations';
 import { PerformanceProps } from '../performance';
 import { ScoreProps } from '../score';
+import PropTypes from 'prop-types';
 
 type DashboardProps = {
   userId: number;
@@ -31,7 +27,7 @@ type DashboardProps = {
  * The dashboard main component to display
  * all the graphs and other useful information.
  */
-export function Dashboard({
+export function Dashboard ({
   userId,
   Layout,
   Placeholder,
@@ -97,3 +93,15 @@ export function Dashboard({
     />
   );
 }
+
+Dashboard.propTypes = {
+  userId: PropTypes.number.isRequired,
+  Layout: PropTypes.func.isRequired,
+  Placeholder: PropTypes.func.isRequired,
+  Header: PropTypes.func.isRequired,
+  Activity: PropTypes.func.isRequired,
+  AverageSessions: PropTypes.func.isRequired,
+  Performance: PropTypes.func.isRequired,
+  Score: PropTypes.func.isRequired,
+  NutritionalInformations: PropTypes.func.isRequired,
+};

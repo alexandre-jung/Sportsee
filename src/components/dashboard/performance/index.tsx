@@ -1,11 +1,6 @@
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  ResponsiveContainer,
-} from 'recharts';
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
 import { Performance as PerformanceModel } from '../../../models';
+import PropTypes from 'prop-types';
 
 export const PERFORMANCE_SUBJECT_MAP: { [key: string]: string } = {
   intensity: 'Intensité',
@@ -20,7 +15,7 @@ export const PERFORMANCE_SUBJECT_MAP: { [key: string]: string } = {
  * Transforms the data from a Performance model to a format that can be displayed
  * by the performance graph component.
  */
-function adaptPerformanceData(performance: PerformanceModel) {
+function adaptPerformanceData (performance: PerformanceModel) {
   return Object.entries(performance).map(([key, value]) => ({
     subject: PERFORMANCE_SUBJECT_MAP[key],
     value,
@@ -34,7 +29,7 @@ export type PerformanceProps = {
 /**
  * The performance graph.
  */
-export function Performance({ performance }: PerformanceProps) {
+export function Performance ({ performance }: PerformanceProps) {
   const data = adaptPerformanceData(performance);
 
   return (
@@ -64,3 +59,14 @@ export function Performance({ performance }: PerformanceProps) {
     </ResponsiveContainer>
   );
 }
+
+Performance.propTypes = {
+  performance: PropTypes.exact({
+    intensity: PropTypes.number.isRequired,
+    speed: PropTypes.number.isRequired,
+    strength: PropTypes.number.isRequired,
+    endurance: PropTypes.number.isRequired,
+    energy: PropTypes.number.isRequired,
+    cardio: PropTypes.number.isRequired,
+  }).isRequired,
+};

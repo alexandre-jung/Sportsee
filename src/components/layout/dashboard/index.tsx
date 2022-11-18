@@ -1,4 +1,5 @@
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 export type DashboardLayoutProps = {
   header: JSX.Element;
@@ -12,7 +13,7 @@ export type DashboardLayoutProps = {
 /**
  * The dashboard to display user's most important information.
  */
-export function DashboardLayout({
+export function DashboardLayout ({
   header,
   activity,
   averageSessions,
@@ -33,3 +34,12 @@ export function DashboardLayout({
     </div>
   );
 }
+
+DashboardLayout.propTypes = {
+  header: PropTypes.element.isRequired,
+  activity: PropTypes.element.isRequired,
+  averageSessions: PropTypes.element.isRequired,
+  performance: PropTypes.element.isRequired,
+  score: PropTypes.element.isRequired,
+  nutritionalInformations: PropTypes.element.isRequired,
+};

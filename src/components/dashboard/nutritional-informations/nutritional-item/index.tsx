@@ -1,22 +1,21 @@
 import { FC } from 'react';
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 type NutritionalItemProps = {
   value: number | string;
   unit: string;
   label: string;
-  Icon: FC<
-    React.SVGProps<SVGSVGElement> & {
-      title?: string | undefined;
-    }
-  >;
+  Icon: FC<React.SVGProps<SVGSVGElement> & {
+    title?: string | undefined;
+  }>;
 };
 
 /**
  * Displays a single nutritional information
  * with its value, unit, help text and a pretty icon.
  */
-export function NutritionalItem({
+export function NutritionalItem ({
   value,
   unit,
   label,
@@ -36,3 +35,13 @@ export function NutritionalItem({
     </div>
   );
 }
+
+NutritionalItem.propTypes = {
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
+  unit: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  Icon: PropTypes.func.isRequired,
+};

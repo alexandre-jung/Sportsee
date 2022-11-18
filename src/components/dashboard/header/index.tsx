@@ -1,4 +1,5 @@
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 export type HeaderProps = {
   firstName: string;
@@ -7,7 +8,7 @@ export type HeaderProps = {
 /**
  * The dashboard header that displays the username and an encouraging message.
  */
-export function Header({ firstName }: HeaderProps) {
+export function Header ({ firstName }: HeaderProps) {
   return (
     <>
       <h1 style={{ margin: '0' }}>
@@ -20,3 +21,7 @@ export function Header({ firstName }: HeaderProps) {
     </>
   );
 }
+
+Header.propTypes = {
+  firstName: PropTypes.string.isRequired,
+};

@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export type QueryState<T> = {
   isLoading: boolean;
-  data: T | null;
-  isError?: boolean;
+  data?: T;
+  isError: boolean;
   error?: any;
 };
 
 const initialQueryState = {
   isLoading: true,
-  data: null,
+  isError: false,
 };
 
 /**
@@ -20,7 +20,7 @@ const initialQueryState = {
  *
  * @param { function } queryFunction - a function returning a Promise
  */
-export function useQuery<T>(queryFunction: () => Promise<any>) {
+export function useQuery<T> (queryFunction: () => Promise<any>) {
   const [queryState, setQueryState] =
     useState<QueryState<T>>(initialQueryState);
 
@@ -35,11 +35,18 @@ export function useQuery<T>(queryFunction: () => Promise<any>) {
 
   useEffect(() => {
     const queryPromise = queryFunction();
-    setQueryState((state: any) => ({ ...state, isLoading: true }));
+    setQueryState((state: any) => ({
+      ...state,
+      isLoading: true,
+    }));
     queryPromise
       .then((data) => {
         if (isMounted.current) {
-          setQueryState({ data, isLoading: false });
+          setQueryState({
+            data,
+            isLoading: false,
+            isError: false,
+          });
         }
       })
       .catch((error: any) => {

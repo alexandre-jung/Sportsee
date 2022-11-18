@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 import { DAYS_MAP } from '../../../constants';
 import { CustomTooltip } from './custom-tooltip';
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 export type AverageSessions = {
   monday: number;
@@ -18,7 +19,7 @@ export type AverageSessions = {
  * Transforms the data from an AverageSessions model to a format that can be displayed
  * by the average sessions graph component.
  */
-function adaptAverageSessionsData(averageSessions: AverageSessions) {
+function adaptAverageSessionsData (averageSessions: AverageSessions) {
   return Object.entries(averageSessions).map(([day, length]) => ({
     key: day,
     translatedDay: (DAYS_MAP as any)[day],
@@ -34,7 +35,7 @@ export type AverageSessionsProps = {
 /**
  * The average sessions graph component.
  */
-export function AverageSessions({ averageSessions }: AverageSessionsProps) {
+export function AverageSessions ({ averageSessions }: AverageSessionsProps) {
   const data = adaptAverageSessionsData(averageSessions);
 
   return (
@@ -93,3 +94,15 @@ export function AverageSessions({ averageSessions }: AverageSessionsProps) {
     </ResponsiveContainer>
   );
 }
+
+AverageSessions.propTypes = {
+  averageSessions: PropTypes.exact({
+    monday: PropTypes.number.isRequired,
+    tuesday: PropTypes.number.isRequired,
+    wednesday: PropTypes.number.isRequired,
+    thursday: PropTypes.number.isRequired,
+    friday: PropTypes.number.isRequired,
+    saturday: PropTypes.number.isRequired,
+    sunday: PropTypes.number.isRequired,
+  }).isRequired,
+};

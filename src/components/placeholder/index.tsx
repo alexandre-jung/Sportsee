@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { QueryState } from '../../hooks';
 import styles from './styles.module.scss';
 
@@ -9,7 +10,7 @@ export type QueryPlaceholderProps = {
 /**
  * A component that delays the display of its children until a query resolves.
  */
-export function QueryPlaceholder({
+export function QueryPlaceholder ({
   query: { data, isLoading, isError, error },
   children,
 }: QueryPlaceholderProps): React.ReactElement {
@@ -23,3 +24,13 @@ export function QueryPlaceholder({
 
   return <>{children(data)}</>;
 }
+
+QueryPlaceholder.propTypes = {
+  children: PropTypes.func.isRequired,
+  query: PropTypes.exact({
+    data: PropTypes.any,
+    isLoading: PropTypes.bool.isRequired,
+    isError: PropTypes.bool.isRequired,
+    error: PropTypes.any,
+  }).isRequired,
+};

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 type CustomTooltipProps = {
   active?: boolean;
@@ -9,7 +10,7 @@ type CustomTooltipProps = {
 /**
  * Custom Recharts tooltip for the average sessions graph.
  */
-export function CustomTooltip({ active, payload }: CustomTooltipProps) {
+export function CustomTooltip ({ active, payload }: CustomTooltipProps) {
   return (
     active && (
       <div className={styles.tooltip}>
@@ -21,3 +22,8 @@ export function CustomTooltip({ active, payload }: CustomTooltipProps) {
     )
   );
 }
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool.isRequired,
+  payload: PropTypes.any.isRequired,
+};

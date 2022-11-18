@@ -6,6 +6,7 @@ import { ReactComponent as AppleIcon } from '/src/assets/images/apple-icon.svg';
 import { ReactComponent as BurgerIcon } from '/src/assets/images/burger-icon.svg';
 import { formatNumber } from '../../../utils';
 import styles from './styles.module.scss';
+import PropTypes from 'prop-types';
 
 export type NutritionalInformationsProps = {
   calorie: number;
@@ -17,7 +18,7 @@ export type NutritionalInformationsProps = {
 /**
  * Displays the user's nutritional information in a vertical box of items.
  */
-export function NutritionalInformations({
+export function NutritionalInformations ({
   calorie,
   protein,
   carbohydrate,
@@ -54,3 +55,10 @@ export function NutritionalInformations({
     </div>
   );
 }
+
+NutritionalInformations.propTypes = {
+  calorie: PropTypes.number.isRequired,
+  protein: PropTypes.number.isRequired,
+  carbohydrate: PropTypes.number.isRequired,
+  lipid: PropTypes.number.isRequired,
+};
