@@ -17,7 +17,7 @@ const USER_ID = 12;
 /**
  * The application main component.
  *
- * @returns JSX.Element
+ * @returns {JSX.Element} JSX element
  */
 export function App() {
   return (

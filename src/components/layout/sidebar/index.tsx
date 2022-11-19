@@ -6,6 +6,11 @@ import styles from './styles.module.scss';
 
 /**
  * The application main sidebar.
+ *
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <Sidebar />
  */
 export function Sidebar() {
   return (

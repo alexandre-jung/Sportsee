@@ -1,5 +1,5 @@
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { CustomTooltip } from './custom-tooltip';
+import { ActivityCustomTooltip } from './custom-tooltip';
 import styles from './styles.module.scss';
 import PropTypes from 'prop-types';
 
@@ -9,11 +9,21 @@ export type Activity = {
   calories: number;
 };
 
+type AdaptedActivityData = {
+  key: number
+  kilogram: number
+  calories: number
+  day: Date
+}[]
+
 /**
  * Transforms the data from an Activity model to a format that can be displayed
  * by the activity graph component.
+ *
+ * @param {Activity[]} activity
+ * @return {AdaptedActivityData}
  */
-function adaptActivityData (activity: Activity[]) {
+function adaptActivityData (activity: Activity[]): AdaptedActivityData {
   return activity.map(({ kilogram, calories, day }, index) => ({
     key: index + 1,
     kilogram,
@@ -28,6 +38,13 @@ export type ActivityProps = {
 
 /**
  * The activity graph component.
+ *
+ * @type {React.FC<ActivityProps>}
+ * @param {ActivityProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <Activity activity={activity as Activity[]} />
  */
 export function Activity ({ activity }: ActivityProps) {
   const data = adaptActivityData(activity);
@@ -69,7 +86,7 @@ export function Activity ({ activity }: ActivityProps) {
         />
         <Tooltip
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          content={CustomTooltip as any}
+          content={ActivityCustomTooltip as any}
           wrapperStyle={{ outline: 'none' }}
           cursor={{ fill: 'gray', opacity: 0.1 }}
         />
@@ -128,3 +145,5 @@ Activity.propTypes = {
     }).isRequired,
   ).isRequired,
 };
+
+export * from './custom-tooltip';

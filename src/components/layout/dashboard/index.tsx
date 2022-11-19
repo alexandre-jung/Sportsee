@@ -12,6 +12,16 @@ export type DashboardLayoutProps = {
 
 /**
  * The dashboard to display user's most important information.
+ *
+ * @type {React.FC<DashboardLayoutProps>}
+ * @param {DashboardLayoutProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <Dashboard
+ *   Layout={DashboardLayout}
+ *   // ...
+ * />
  */
 export function DashboardLayout ({
   header,

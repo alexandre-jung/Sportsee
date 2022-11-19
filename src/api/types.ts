@@ -25,13 +25,14 @@ export type ApiResponseAverageSessions = {
     sessions: Session[];
   };
 };
-type Kind = {
-  [key: string]: string;
-};
 
 export type PerformanceItem = {
   value: number;
   kind: number;
+};
+
+export type Kind = {
+  [key: string]: string;
 };
 
 export type ApiResponsePerformance = {

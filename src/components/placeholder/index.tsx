@@ -9,6 +9,15 @@ export type QueryPlaceholderProps = {
 
 /**
  * A component that delays the display of its children until a query resolves.
+ *
+ * @type {React.FC<QueryPlaceholderProps>}
+ * @param {QueryPlaceholderProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <Placeholder query={userQuery}>
+ *   {(user) => <Header firstName={(user as models.User).firstName} />}
+ * </Placeholder>
  */
 export function QueryPlaceholder ({
   query: { data, isLoading, isError, error },

@@ -8,8 +8,15 @@ export type ScoreProps = {
 
 /**
  * The today's score progress ring.
+ *
+ * @type {React.FC<ScoreProps>}
+ * @param {ScoreProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <Score scorePercentage={(user as models.User).scorePercentage} />
  */
-export function Score ({ scorePercentage }: ScoreProps) {
+export function Score ({ scorePercentage }: ScoreProps): JSX.Element {
   const data = [
     {
       scorePercentage,

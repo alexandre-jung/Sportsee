@@ -11,6 +11,11 @@
       "vitest/globals"
     ],
     "strict": true,
-    "noImplicitAny": true
-  }
+    "noImplicitAny": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

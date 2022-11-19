@@ -11,7 +11,7 @@ import { PerformanceProps } from '../performance';
 import { ScoreProps } from '../score';
 import PropTypes from 'prop-types';
 
-type DashboardProps = {
+export type DashboardProps = {
   userId: number;
   Layout: FC<DashboardLayoutProps>;
   Placeholder: FC<QueryPlaceholderProps>;
@@ -24,8 +24,24 @@ type DashboardProps = {
 };
 
 /**
- * The dashboard main component to display
- * all the graphs and other useful information.
+ * Displays a header, the graphs and other useful information.
+ *
+ * @type {React.FC<DashboardProps>}
+ * @param {DashboardProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <Dashboard
+ *   userId={USER_ID}
+ *   Layout={DashboardLayout}
+ *   Placeholder={QueryPlaceholder}
+ *   Header={Header}
+ *   Activity={Activity}
+ *   AverageSessions={AverageSessions}
+ *   Performance={Performance}
+ *   Score={Score}
+ *   NutritionalInformations={NutritionalInformations}
+ * />
  */
 export function Dashboard ({
   userId,

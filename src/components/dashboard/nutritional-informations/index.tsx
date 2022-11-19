@@ -17,6 +17,18 @@ export type NutritionalInformationsProps = {
 
 /**
  * Displays the user's nutritional information in a vertical box of items.
+ *
+ * @type {React.FC<NutritionalInformationsProps>}
+ * @param {NutritionalInformationsProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <NutritionalInformations
+ *   calorie={(user as models.User).calorieCount}
+ *   protein={(user as models.User).proteinCount}
+ *   carbohydrate={(user as models.User).carbohydrateCount}
+ *   lipid={(user as models.User).lipidCount}
+ * />
  */
 export function NutritionalInformations ({
   calorie,

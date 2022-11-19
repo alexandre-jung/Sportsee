@@ -6,7 +6,23 @@ export type HeaderProps = {
 };
 
 /**
- * The dashboard header that displays the username and an encouraging message.
+ * The dashboard header.
+ *
+ * Displays the username and an encouraging message.
+ *
+ * @type {React.FC<HeaderProps>}
+ * @param {HeaderProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <Layout
+ *   header={
+ *     <Placeholder query={userQuery}>
+ *       {(user) => <Header firstName={(user as models.User).firstName} />}
+ *     </Placeholder>
+ *   }
+ *   // ...
+ * />
  */
 export function Header ({ firstName }: HeaderProps) {
   return (

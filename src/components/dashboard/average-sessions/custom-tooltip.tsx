@@ -2,15 +2,27 @@
 import styles from './styles.module.scss';
 import PropTypes from 'prop-types';
 
-type CustomTooltipProps = {
+export type AverageSessionsCustomTooltipProps = {
   active?: boolean;
   payload?: any;
 };
 
 /**
  * Custom Recharts tooltip for the average sessions graph.
+ *
+ * @type {React.FC<AverageSessionsCustomTooltipProps>}
+ * @param {AverageSessionsCustomTooltipProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * import { Tooltip } from 'recharts';
+ *
+ * <Tooltip
+ *   content={AverageSessionsCustomTooltip as any}
+ *   wrapperStyle={{ outline: 'none' }}
+ * />
  */
-export function CustomTooltip ({ active, payload }: CustomTooltipProps) {
+export function AverageSessionsCustomTooltip ({ active, payload }: AverageSessionsCustomTooltipProps) {
   return (
     active && (
       <div className={styles.tooltip}>
@@ -23,7 +35,7 @@ export function CustomTooltip ({ active, payload }: CustomTooltipProps) {
   );
 }
 
-CustomTooltip.propTypes = {
+AverageSessionsCustomTooltip.propTypes = {
   active: PropTypes.bool.isRequired,
   payload: PropTypes.any.isRequired,
 };

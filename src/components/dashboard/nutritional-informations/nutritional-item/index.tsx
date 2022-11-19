@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styles from './styles.module.scss';
 import PropTypes from 'prop-types';
 
-type NutritionalItemProps = {
+export type NutritionalItemProps = {
   value: number | string;
   unit: string;
   label: string;
@@ -12,8 +12,21 @@ type NutritionalItemProps = {
 };
 
 /**
- * Displays a single nutritional information
- * with its value, unit, help text and a pretty icon.
+ * A nutritional information item.
+ *
+ * Displays its value, unit, help text and a pretty icon.
+ *
+ * @type {React.FC<NutritionalItemProps>}
+ * @param {NutritionalItemProps} props
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <NutritionalItem
+ *   value={formattedCalorie}
+ *   unit={UNITS.calorie}
+ *   label="Calories"
+ *   Icon={FireIcon}
+ * />
  */
 export function NutritionalItem ({
   value,

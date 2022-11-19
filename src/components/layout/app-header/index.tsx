@@ -3,6 +3,11 @@ import { ReactComponent as AppLogo } from '../../../assets/images/sportsee-logo.
 
 /**
  * The application main header.
+ *
+ * @return {JSX.Element} JSX element
+ *
+ * @example
+ * <AppHeader />
  */
 export function AppHeader() {
   return (
